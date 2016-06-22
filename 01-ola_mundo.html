@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Olá Mundo Vue.js com Databinding</title>
+</head>
+<body>
+ 
+  <div id="app">
+    <h1>{{ mensagem }}</h1>    
+    <input v-model="mensagem">
+    
+    <!-- Retornado um arquivo json -->
+    <pre>
+      {{ $data | json }}
+    </pre>
+  
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+  
+  <script>
+    /*new Vue({}); = Criando um objeto no vue*/
+    /*el: = Elemento que será utilizado no objeto Vue*/
+    /*data: = Data e uma propriedade do Vue, utilizada para 
+    armazenar todas as variavéis do objeto Vue*/
+      new Vue({
+        el: '#app',
+        data: {
+          mensagem: 'Olá Mundo'
+        }
+    });
+  </script>
+</body>
+</html>

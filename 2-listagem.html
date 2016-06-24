@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Listagem Vue.js com Databinding</title>
+</head>
+<body>
+ 
+  <div id="app">
+    <h1>{{ title }}</h1>    
+    
+    <ul>
+      <li v-for="animal in animals">
+      {{ animal }}
+      </li>
+    </ul>
+  
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+  
+  <script>
+    /*new Vue({}); = Criando um objeto no vue*/
+    /*el: = Elemento que será utilizado no objeto Vue*/
+    /*data: = Data e uma propriedade do Vue, utilizada para 
+    armazenar todas as variavéis do objeto Vue*/
+      new Vue({
+        el: '#app',
+        data: {
+          title: "Listagem de animais",
+          animals: ["cachorro", "gato", "papagaio"] 
+        }
+    });
+  </script>
+</body>
+</html>

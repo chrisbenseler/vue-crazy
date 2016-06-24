@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seleção de item em uma lista Vue.js com Databinding</title>
+  <style>
+  li {
+  	cursor: pointer;
+  }
+  	li.selected {
+  		font-weight: bold;
+  	}
+  </style>
+</head>
+<body>
+ 
+  <div id="app">
+    <h1>{{ title }}</h1>    
+    
+    <ul>
+      <li v-for="animal in animals" v-on:click="select($event, animal)">
+      {{ animal }}
+      </li>
+    </ul>
+  
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+  
+  <script>
+    /*new Vue({}); = Criando um objeto no vue*/
+    /*el: = Elemento que será utilizado no objeto Vue*/
+    /*data: = Data e uma propriedade do Vue, utilizada para 
+    armazenar todas as variavéis do objeto Vue*/
+      new Vue({
+        el: '#app',
+        data: {
+          title: "Listagem de animais",
+          animals: ["cachorro", "gato", "papagaio"] 
+        },
+        methods: {
+        	select: function(event, animal) {
+
+        		if(this.selected_element) {
+        			this.selected_element.classList.remove("selected");
+        		}
+
+        		this.selected_element = event.target;
+        		this.selected_element.classList.add("selected");
+        	}
+        }
+    });
+  </script>
+</body>
+</html>
